@@ -1,0 +1,211 @@
+timestamp,source,title,text,url,tickers
+2022-07-01T12:18:00+00:00,Synthetic Wire,Nvidia halts production at key plant due to chip shortage,,https://example.com/sample-news/0050,NVDA
+2022-07-01T19:15:00+00:00,Demo Markets Daily,New sanctions and war risk threaten Netflix operations abroad,,https://example.com/sample-news/0157,NFLX
+2022-07-02T07:08:00+00:00,Demo Markets Daily,"Coca-Cola warns of weak revenue in coming quarter, shares slide",,https://example.com/sample-news/0043,KO
+2022-07-02T09:04:00+00:00,Synthetic Wire,Meta Platforms outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0184,META
+2022-07-02T09:06:00+00:00,Demo Markets Daily,Pfizer beats quarterly earnings estimates as revenue jumps 18%,,https://example.com/sample-news/0042,PFE
+2022-07-02T09:59:00+00:00,Demo Markets Daily,Pfizer beats quarterly earnings estimates as revenue jumps 18%; Bank of America also in focus,,https://example.com/sample-news/0147,
+2022-07-02T10:19:00+00:00,Synthetic Wire,"Alphabet says supply chain bottlenecks have eased, production up",,https://example.com/sample-news/0198,GOOGL
+2022-07-02T13:05:00+00:00,Sample Business News,Exxon Mobil gains as Fed signals slower pace of interest rate hikes,,https://example.com/sample-news/0190,XOM
+2022-07-02T17:33:00+00:00,Synthetic Wire,Bank of America benefits as sanctions relief reopens export markets,,https://example.com/sample-news/0069,BAC
+2022-07-03T10:05:00+00:00,Synthetic Wire,Pfizer writes down value of failed acquisition,,https://example.com/sample-news/0012,PFE
+2022-07-03T14:42:00+00:00,Synthetic Wire,"Coca-Cola says supply chain bottlenecks have eased, production up",,https://example.com/sample-news/0193,KO
+2022-07-03T16:07:00+00:00,Sample Business News,Netflix gains as Fed signals slower pace of interest rate hikes,,https://example.com/sample-news/0007,NFLX
+2022-07-03T16:51:00+00:00,Synthetic Wire,Analysts trim price target on Pfizer,,https://example.com/sample-news/0087,PFE
+2022-07-04T06:04:00+00:00,Sample Business News,"Johnson & Johnson opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0071,JNJ
+2022-07-04T17:38:00+00:00,Demo Markets Daily,Analysts trim price target on Disney,,https://example.com/sample-news/0029,DIS
+2022-07-05T10:55:00+00:00,Synthetic Wire,New sanctions and war risk threaten Coca-Cola operations abroad,,https://example.com/sample-news/0028,KO
+2022-07-05T13:43:00+00:00,Demo Markets Daily,Cooling inflation data lifts Bank of America and other large caps,,https://example.com/sample-news/0189,BAC
+2022-07-05T15:40:00+00:00,Sample Business News,"Alphabet wins regulatory approval, ending long investigation",,https://example.com/sample-news/0033,GOOGL
+2022-07-05T17:12:00+00:00,Demo Markets Daily,"Disney warns of weak revenue in coming quarter, shares slide; Coca-Cola also in focus",,https://example.com/sample-news/0044,
+2022-07-06T11:40:00+00:00,Synthetic Wire,Meta Platforms delays launch of new AI assistant after testing problems,,https://example.com/sample-news/0004,META
+2022-07-06T18:19:00+00:00,Sample Business News,Disney shares climb as analysts turn more bullish,,https://example.com/sample-news/0104,DIS
+2022-07-07T06:02:00+00:00,Synthetic Wire,"Alphabet launches next-generation cloud TPU, preorders sell out",,https://example.com/sample-news/0093,GOOGL
+2022-07-07T07:13:00+00:00,Synthetic Wire,"Coca-Cola warns of weak revenue in coming quarter, shares slide",,https://example.com/sample-news/0118,KO
+2022-07-07T09:17:00+00:00,Sample Business News,EU regulators fine Microsoft over data privacy violations; Netflix also in focus,,https://example.com/sample-news/0061,
+2022-07-07T11:55:00+00:00,Synthetic Wire,Nvidia agrees to acquire AI startup in $2 billion deal; Disney also in focus,,https://example.com/sample-news/0095,
+2022-07-07T13:13:00+00:00,Demo Markets Daily,"Apple says supply chain bottlenecks have eased, production up",,https://example.com/sample-news/0045,AAPL
+2022-07-07T16:29:00+00:00,Synthetic Wire,Coca-Cola falls as Fed raises interest rates by 75 basis points,,https://example.com/sample-news/0133,KO
+2022-07-08T07:38:00+00:00,Demo Markets Daily,JPMorgan Chase writes down value of failed acquisition,,https://example.com/sample-news/0158,JPM
+2022-07-08T07:40:00+00:00,Demo Markets Daily,Analysts trim price target on Meta Platforms,,https://example.com/sample-news/0019,META
+2022-07-08T15:44:00+00:00,Sample Business News,Disney completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0179,DIS
+2022-07-08T20:31:00+00:00,Sample Business News,Reviews of Disney's new Disney+ bundle disappoint critics,,https://example.com/sample-news/0149,DIS
+2022-07-10T06:17:00+00:00,Sample Business News,"Pfizer wins regulatory approval, ending long investigation",,https://example.com/sample-news/0132,PFE
+2022-07-11T13:20:00+00:00,Synthetic Wire,Disney CFO steps down amid internal review,,https://example.com/sample-news/0059,DIS
+2022-07-11T14:57:00+00:00,Sample Business News,Easing trade tensions with China boost JPMorgan Chase outlook,,https://example.com/sample-news/0038,JPM
+2022-07-11T16:29:00+00:00,Sample Business News,Exxon Mobil quarterly profit falls 30% as margins shrink,,https://example.com/sample-news/0085,XOM
+2022-07-12T07:16:00+00:00,Synthetic Wire,Meta Platforms faces antitrust lawsuit from Justice Department,,https://example.com/sample-news/0124,META
+2022-07-12T13:10:00+00:00,Demo Markets Daily,Moody's upgrades Microsoft credit rating on strong cash flow,,https://example.com/sample-news/0031,MSFT
+2022-07-12T20:35:00+00:00,Sample Business News,Johnson & Johnson quarterly profit falls 30% as margins shrink,,https://example.com/sample-news/0131,JNJ
+2022-07-13T09:04:00+00:00,Synthetic Wire,Meta Platforms CFO steps down amid internal review,,https://example.com/sample-news/0199,META
+2022-07-13T10:26:00+00:00,Sample Business News,Amazon completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0032,AMZN
+2022-07-13T17:29:00+00:00,Sample Business News,Factory shutdown and supply chain disruption hit Johnson & Johnson output,,https://example.com/sample-news/0161,JNJ
+2022-07-13T18:09:00+00:00,Sample Business News,S&P cuts Apple outlook to negative amid refinancing concerns,,https://example.com/sample-news/0060,AAPL
+2022-07-13T18:21:00+00:00,Demo Markets Daily,Bank of America named among most admired companies this year,,https://example.com/sample-news/0039,BAC
+2022-07-13T21:44:00+00:00,Demo Markets Daily,Netflix unveils new original series to strong early demand,,https://example.com/sample-news/0082,NFLX
+2022-07-14T10:55:00+00:00,Demo Markets Daily,Amazon exposed as US-China tensions escalate over Taiwan,,https://example.com/sample-news/0197,AMZN
+2022-07-14T11:08:00+00:00,Demo Markets Daily,Coca-Cola falls as Fed raises interest rates by 75 basis points,,https://example.com/sample-news/0073,KO
+2022-07-14T12:05:00+00:00,Sample Business News,"Exxon Mobil wins regulatory approval, ending long investigation",,https://example.com/sample-news/0115,XOM
+2022-07-14T12:26:00+00:00,Demo Markets Daily,Easing trade tensions with China boost Apple outlook,,https://example.com/sample-news/0180,AAPL
+2022-07-14T17:47:00+00:00,Demo Markets Daily,Coca-Cola CFO steps down amid internal review,,https://example.com/sample-news/0208,KO
+2022-07-14T18:50:00+00:00,Demo Markets Daily,Tesla agrees to acquire AI startup in $2 billion deal,,https://example.com/sample-news/0081,TSLA
+2022-07-14T19:40:00+00:00,Sample Business News,Coca-Cola beats quarterly earnings estimates as revenue jumps 18%,,https://example.com/sample-news/0088,KO
+2022-07-15T09:16:00+00:00,Demo Markets Daily,Nvidia appoints highly regarded industry veteran as new CFO,,https://example.com/sample-news/0035,NVDA
+2022-07-15T10:26:00+00:00,Synthetic Wire,Nvidia quarterly profit falls 30% as margins shrink; Apple also in focus,,https://example.com/sample-news/0155,
+2022-07-15T10:26:00+00:00,Demo Markets Daily,New sanctions and war risk threaten Microsoft operations abroad,,https://example.com/sample-news/0166,MSFT
+2022-07-15T11:39:00+00:00,Sample Business News,Netflix takeover bid collapses after regulators object to merger,,https://example.com/sample-news/0022,NFLX
+2022-07-16T08:14:00+00:00,Demo Markets Daily,Johnson & Johnson beats quarterly earnings estimates as revenue jumps 18%,,https://example.com/sample-news/0146,JNJ
+2022-07-16T13:06:00+00:00,Sample Business News,"Apple launches next-generation iPhone, preorders sell out; Pfizer also in focus",,https://example.com/sample-news/0135,
+2022-07-16T16:14:00+00:00,Sample Business News,"Pfizer reports strong quarterly results, shares rally after hours",,https://example.com/sample-news/0162,PFE
+2022-07-17T09:14:00+00:00,Sample Business News,Pfizer named among most admired companies this year,,https://example.com/sample-news/0072,PFE
+2022-07-17T09:37:00+00:00,Sample Business News,Nvidia unveils new data-center GPU to strong early demand,,https://example.com/sample-news/0080,NVDA
+2022-07-17T15:41:00+00:00,Synthetic Wire,Netflix falls as Fed raises interest rates by 75 basis points,,https://example.com/sample-news/0037,NFLX
+2022-07-17T18:23:00+00:00,Sample Business News,Tesla outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0021,TSLA
+2022-07-18T10:35:00+00:00,Synthetic Wire,Disney faces antitrust lawsuit from Justice Department,,https://example.com/sample-news/0194,DIS
+2022-07-18T10:36:00+00:00,Demo Markets Daily,Alphabet shares climb as analysts turn more bullish,,https://example.com/sample-news/0183,GOOGL
+2022-07-18T14:40:00+00:00,Synthetic Wire,Tesla shares climb as analysts turn more bullish,,https://example.com/sample-news/0156,TSLA
+2022-07-18T20:09:00+00:00,Demo Markets Daily,"Microsoft opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0016,MSFT
+2022-07-19T10:49:00+00:00,Sample Business News,Recession fears weigh on Apple as inflation stays high,,https://example.com/sample-news/0075,AAPL
+2022-07-19T11:23:00+00:00,Synthetic Wire,Amazon benefits as sanctions relief reopens export markets,,https://example.com/sample-news/0137,AMZN
+2022-07-19T12:18:00+00:00,Demo Markets Daily,Disney unveils new Disney+ bundle to strong early demand,,https://example.com/sample-news/0164,DIS
+2022-07-19T14:03:00+00:00,Synthetic Wire,Amazon names new chief operating officer to drive growth,,https://example.com/sample-news/0107,AMZN
+2022-07-20T07:43:00+00:00,Demo Markets Daily,Netflix hit with SEC probe over accounting practices,,https://example.com/sample-news/0112,NFLX
+2022-07-20T10:27:00+00:00,Sample Business News,Netflix exposed as US-China tensions escalate over Taiwan,,https://example.com/sample-news/0172,NFLX
+2022-07-20T10:46:00+00:00,Demo Markets Daily,Coca-Cola unveils new energy drink to strong early demand,,https://example.com/sample-news/0058,KO
+2022-07-20T10:53:00+00:00,Sample Business News,EU regulators fine Alphabet over data privacy violations; Johnson & Johnson also in focus,,https://example.com/sample-news/0003,
+2022-07-20T15:34:00+00:00,Demo Markets Daily,Bank of America gains as Fed signals slower pace of interest rate hikes,,https://example.com/sample-news/0174,BAC
+2022-07-20T16:46:00+00:00,Demo Markets Daily,Court dismisses antitrust lawsuit against JPMorgan Chase,,https://example.com/sample-news/0023,JPM
+2022-07-21T06:57:00+00:00,Sample Business News,JPMorgan Chase writes down value of failed acquisition,,https://example.com/sample-news/0188,JPM
+2022-07-21T13:30:00+00:00,Demo Markets Daily,Exxon Mobil names new chief operating officer to drive growth,,https://example.com/sample-news/0130,XOM
+2022-07-21T21:31:00+00:00,Sample Business News,Analysts praise Amazon's new Echo device launch,,https://example.com/sample-news/0077,AMZN
+2022-07-22T15:53:00+00:00,Sample Business News,Tesla CFO steps down amid internal review; Coca-Cola also in focus,,https://example.com/sample-news/0141,
+2022-07-22T18:15:00+00:00,Sample Business News,Amazon CFO steps down amid internal review,,https://example.com/sample-news/0152,AMZN
+2022-07-23T08:34:00+00:00,Demo Markets Daily,Recession fears weigh on Tesla as inflation stays high,,https://example.com/sample-news/0111,TSLA
+2022-07-23T09:11:00+00:00,Demo Markets Daily,"JPMorgan Chase opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0203,JPM
+2022-07-23T15:10:00+00:00,Synthetic Wire,Amazon agrees to acquire AI startup in $2 billion deal,,https://example.com/sample-news/0002,AMZN
+2022-07-23T19:23:00+00:00,Synthetic Wire,Johnson & Johnson outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0011,JNJ
+2022-07-23T21:25:00+00:00,Synthetic Wire,"Apple launches next-generation Apple Watch, preorders sell out",,https://example.com/sample-news/0090,AAPL
+2022-07-24T09:33:00+00:00,Demo Markets Daily,Meta Platforms raises full-year guidance after record profit,,https://example.com/sample-news/0154,META
+2022-07-24T10:46:00+00:00,Sample Business News,Pfizer quarterly profit falls 30% as margins shrink,,https://example.com/sample-news/0102,PFE
+2022-07-24T17:57:00+00:00,Synthetic Wire,"Netflix reports strong quarterly results, shares rally after hours",,https://example.com/sample-news/0202,NFLX
+2022-07-24T21:24:00+00:00,Synthetic Wire,Moody's upgrades Netflix credit rating on strong cash flow,,https://example.com/sample-news/0127,NFLX
+2022-07-25T12:19:00+00:00,Sample Business News,Apple recalls products over safety defect,,https://example.com/sample-news/0195,AAPL
+2022-07-25T13:29:00+00:00,Demo Markets Daily,Exxon Mobil agrees to acquire AI startup in $2 billion deal,,https://example.com/sample-news/0055,XOM
+2022-07-25T16:00:00+00:00,Synthetic Wire,Analysts trim price target on Tesla,,https://example.com/sample-news/0171,TSLA
+2022-07-25T17:07:00+00:00,Demo Markets Daily,"Tesla says supply chain bottlenecks have eased, production up",,https://example.com/sample-news/0006,TSLA
+2022-07-25T20:22:00+00:00,Demo Markets Daily,"Exxon Mobil opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0175,XOM
+2022-07-26T07:38:00+00:00,Demo Markets Daily,Bank of America beats quarterly earnings estimates as revenue jumps 18%,,https://example.com/sample-news/0204,BAC
+2022-07-26T09:37:00+00:00,Demo Markets Daily,Amazon unveils new Echo device to strong early demand,,https://example.com/sample-news/0182,AMZN
+2022-07-28T06:00:00+00:00,Synthetic Wire,"Exxon Mobil misses earnings expectations, cuts full-year outlook",,https://example.com/sample-news/0100,XOM
+2022-07-28T06:23:00+00:00,Demo Markets Daily,Bank of America outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0054,BAC
+2022-07-28T11:30:00+00:00,Demo Markets Daily,Analysts praise Microsoft's new Surface laptop launch,,https://example.com/sample-news/0076,MSFT
+2022-07-28T14:01:00+00:00,Sample Business News,Amazon names new chief operating officer to drive growth,,https://example.com/sample-news/0047,AMZN
+2022-07-28T17:35:00+00:00,Synthetic Wire,Moody's upgrades Pfizer credit rating on strong cash flow,,https://example.com/sample-news/0192,PFE
+2022-07-28T19:43:00+00:00,Synthetic Wire,Johnson & Johnson names new chief operating officer to drive growth,,https://example.com/sample-news/0086,JNJ
+2022-07-29T07:33:00+00:00,Synthetic Wire,Apple names new chief operating officer to drive growth,,https://example.com/sample-news/0165,AAPL
+2022-07-29T07:39:00+00:00,Demo Markets Daily,Netflix beats quarterly earnings estimates as revenue jumps 18%,,https://example.com/sample-news/0187,NFLX
+2022-07-29T09:32:00+00:00,Sample Business News,Bank of America completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0159,BAC
+2022-07-30T10:44:00+00:00,Demo Markets Daily,Recession fears weigh on Bank of America as inflation stays high,,https://example.com/sample-news/0084,BAC
+2022-07-30T13:44:00+00:00,Synthetic Wire,Coca-Cola named among most admired companies this year,,https://example.com/sample-news/0148,KO
+2022-07-31T06:17:00+00:00,Synthetic Wire,Johnson & Johnson takeover bid collapses after regulators object to merger,,https://example.com/sample-news/0101,JNJ
+2022-07-31T07:34:00+00:00,Synthetic Wire,"Meta Platforms CEO abruptly resigns, board begins search for successor",,https://example.com/sample-news/0049,META
+2022-07-31T19:35:00+00:00,Demo Markets Daily,Bank of America completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0099,BAC
+2022-07-31T20:01:00+00:00,Synthetic Wire,Factory shutdown and supply chain disruption hit Tesla output,,https://example.com/sample-news/0066,TSLA
+2022-07-31T21:53:00+00:00,Demo Markets Daily,Exxon Mobil exposed as US-China tensions escalate over Taiwan,,https://example.com/sample-news/0040,XOM
+2022-08-01T13:10:00+00:00,Sample Business News,"Apple misses earnings expectations, cuts full-year outlook",,https://example.com/sample-news/0030,AAPL
+2022-08-01T18:36:00+00:00,Sample Business News,Meta Platforms outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0169,META
+2022-08-02T09:46:00+00:00,Sample Business News,Factory shutdown and supply chain disruption hit Exxon Mobil output; Meta Platforms also in focus,,https://example.com/sample-news/0070,
+2022-08-02T13:20:00+00:00,Demo Markets Daily,Cooling inflation data lifts Amazon and other large caps,,https://example.com/sample-news/0017,AMZN
+2022-08-02T15:29:00+00:00,Synthetic Wire,"Amazon wins regulatory approval, ending long investigation",,https://example.com/sample-news/0062,AMZN
+2022-08-02T20:11:00+00:00,Demo Markets Daily,Bank of America schedules annual shareholder meeting,,https://example.com/sample-news/0009,BAC
+2022-08-03T13:06:00+00:00,Demo Markets Daily,Johnson & Johnson bonds slump as investors fear credit rating downgrade,,https://example.com/sample-news/0176,JNJ
+2022-08-04T13:26:00+00:00,Demo Markets Daily,Johnson & Johnson recalls products over safety defect,,https://example.com/sample-news/0026,JNJ
+2022-08-04T13:55:00+00:00,Synthetic Wire,Apple completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0150,AAPL
+2022-08-05T09:16:00+00:00,Synthetic Wire,Moody's upgrades JPMorgan Chase credit rating on strong cash flow,,https://example.com/sample-news/0083,JPM
+2022-08-05T12:18:00+00:00,Sample Business News,Disney benefits as sanctions relief reopens export markets,,https://example.com/sample-news/0089,DIS
+2022-08-05T14:55:00+00:00,Sample Business News,"Tesla launches next-generation Cybertruck, preorders sell out",,https://example.com/sample-news/0096,TSLA
+2022-08-05T15:40:00+00:00,Demo Markets Daily,"Exxon Mobil misses earnings expectations, cuts full-year outlook",,https://example.com/sample-news/0205,XOM
+2022-08-05T17:07:00+00:00,Synthetic Wire,Factory shutdown and supply chain disruption hit Johnson & Johnson output,,https://example.com/sample-news/0191,JNJ
+2022-08-05T17:55:00+00:00,Demo Markets Daily,Microsoft quarterly profit falls 30% as margins shrink,,https://example.com/sample-news/0121,MSFT
+2022-08-05T21:53:00+00:00,Sample Business News,"Disney wins regulatory approval, ending long investigation",,https://example.com/sample-news/0134,DIS
+2022-08-06T15:50:00+00:00,Synthetic Wire,Court dismisses antitrust lawsuit against Johnson & Johnson,,https://example.com/sample-news/0041,JNJ
+2022-08-06T20:30:00+00:00,Demo Markets Daily,"Apple CEO abruptly resigns, board begins search for successor",,https://example.com/sample-news/0105,AAPL
+2022-08-07T07:18:00+00:00,Demo Markets Daily,Nvidia takeover bid collapses after regulators object to merger,,https://example.com/sample-news/0110,NVDA
+2022-08-07T13:08:00+00:00,Synthetic Wire,Analysts praise Pfizer's new cancer therapy launch,,https://example.com/sample-news/0057,PFE
+2022-08-07T14:56:00+00:00,Synthetic Wire,Factory shutdown and supply chain disruption hit Bank of America output,,https://example.com/sample-news/0114,BAC
+2022-08-07T15:12:00+00:00,Demo Markets Daily,"Nvidia wins regulatory approval, ending long investigation",,https://example.com/sample-news/0140,NVDA
+2022-08-07T20:48:00+00:00,Sample Business News,Reviews of Tesla's new Model Y variant disappoint critics,,https://example.com/sample-news/0126,TSLA
+2022-08-08T06:22:00+00:00,Demo Markets Daily,JPMorgan Chase named among most admired companies this year; Nvidia also in focus,,https://example.com/sample-news/0143,
+2022-08-08T15:37:00+00:00,Sample Business News,Alphabet agrees to acquire AI startup in $2 billion deal,,https://example.com/sample-news/0108,GOOGL
+2022-08-10T06:28:00+00:00,Synthetic Wire,Microsoft writes down value of failed acquisition,,https://example.com/sample-news/0136,MSFT
+2022-08-10T19:26:00+00:00,Demo Markets Daily,Bank of America delays launch of new mobile banking app after testing problems,,https://example.com/sample-news/0024,BAC
+2022-08-10T19:30:00+00:00,Demo Markets Daily,Microsoft completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0106,MSFT
+2022-08-11T07:01:00+00:00,Sample Business News,Exxon Mobil names new chief operating officer to drive growth,,https://example.com/sample-news/0025,XOM
+2022-08-11T07:31:00+00:00,Sample Business News,Netflix shares climb as analysts turn more bullish,,https://example.com/sample-news/0097,NFLX
+2022-08-11T19:19:00+00:00,Sample Business News,New sanctions and war risk threaten JPMorgan Chase operations abroad,,https://example.com/sample-news/0008,JPM
+2022-08-12T14:58:00+00:00,Demo Markets Daily,Coca-Cola falls as Fed raises interest rates by 75 basis points; Exxon Mobil also in focus,,https://example.com/sample-news/0103,
+2022-08-13T13:04:00+00:00,Demo Markets Daily,Apple CFO steps down amid internal review,,https://example.com/sample-news/0015,AAPL
+2022-08-13T16:09:00+00:00,Sample Business News,Nvidia raises full-year guidance after record profit,,https://example.com/sample-news/0185,NVDA
+2022-08-14T08:10:00+00:00,Demo Markets Daily,Coca-Cola CFO steps down amid internal review,,https://example.com/sample-news/0178,KO
+2022-08-14T11:31:00+00:00,Sample Business News,Recession fears weigh on Tesla as inflation stays high,,https://example.com/sample-news/0051,TSLA
+2022-08-14T13:31:00+00:00,Demo Markets Daily,Court dismisses antitrust lawsuit against Netflix,,https://example.com/sample-news/0052,NFLX
+2022-08-14T18:28:00+00:00,Demo Markets Daily,JPMorgan Chase schedules annual shareholder meeting,,https://example.com/sample-news/0098,JPM
+2022-08-14T19:00:00+00:00,Synthetic Wire,Microsoft quarterly profit falls 30% as margins shrink,,https://example.com/sample-news/0181,MSFT
+2022-08-14T19:38:00+00:00,Synthetic Wire,Microsoft recalls products over safety defect,,https://example.com/sample-news/0151,MSFT
+2022-08-14T20:18:00+00:00,Demo Markets Daily,Recession fears weigh on Nvidia as inflation stays high,,https://example.com/sample-news/0170,NVDA
+2022-08-15T12:33:00+00:00,Sample Business News,JPMorgan Chase completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0068,JPM
+2022-08-15T12:51:00+00:00,Sample Business News,Cooling inflation data lifts JPMorgan Chase and other large caps,,https://example.com/sample-news/0128,JPM
+2022-08-15T14:38:00+00:00,Demo Markets Daily,Microsoft writes down value of failed acquisition,,https://example.com/sample-news/0196,MSFT
+2022-08-15T14:59:00+00:00,Demo Markets Daily,Johnson & Johnson gains as Fed signals slower pace of interest rate hikes,,https://example.com/sample-news/0206,JNJ
+2022-08-15T15:05:00+00:00,Sample Business News,Moody's upgrades Nvidia credit rating on strong cash flow,,https://example.com/sample-news/0200,NVDA
+2022-08-16T09:12:00+00:00,Synthetic Wire,"Disney launches next-generation theme park attraction, preorders sell out",,https://example.com/sample-news/0014,DIS
+2022-08-16T13:52:00+00:00,Sample Business News,New sanctions and war risk threaten Disney operations abroad,,https://example.com/sample-news/0074,DIS
+2022-08-16T21:48:00+00:00,Demo Markets Daily,Meta Platforms shares climb as analysts turn more bullish,,https://example.com/sample-news/0139,META
+2022-08-17T08:47:00+00:00,Synthetic Wire,EU regulators fine Exxon Mobil over data privacy violations,,https://example.com/sample-news/0160,XOM
+2022-08-18T18:41:00+00:00,Demo Markets Daily,Coca-Cola faces antitrust lawsuit from Justice Department,,https://example.com/sample-news/0013,KO
+2022-08-19T06:24:00+00:00,Synthetic Wire,"Netflix CEO abruptly resigns, board begins search for successor",,https://example.com/sample-news/0067,NFLX
+2022-08-19T10:15:00+00:00,Sample Business News,"Johnson & Johnson opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0116,JNJ
+2022-08-19T13:51:00+00:00,Sample Business News,Meta Platforms shares climb as analysts turn more bullish,,https://example.com/sample-news/0109,META
+2022-08-19T20:06:00+00:00,Sample Business News,Bank of America writes down value of failed acquisition,,https://example.com/sample-news/0129,BAC
+2022-08-19T20:53:00+00:00,Synthetic Wire,Exxon Mobil raises full-year guidance after record profit,,https://example.com/sample-news/0010,XOM
+2022-08-19T21:54:00+00:00,Synthetic Wire,Alphabet appoints highly regarded industry veteran as new CFO; Bank of America also in focus,,https://example.com/sample-news/0048,
+2022-08-20T07:25:00+00:00,Sample Business News,Amazon outlook revised to positive by S&P as debt falls,,https://example.com/sample-news/0092,AMZN
+2022-08-20T08:09:00+00:00,Demo Markets Daily,Cooling inflation data lifts Pfizer and other large caps,,https://example.com/sample-news/0117,PFE
+2022-08-20T09:21:00+00:00,Demo Markets Daily,Microsoft gains as Fed signals slower pace of interest rate hikes,,https://example.com/sample-news/0091,MSFT
+2022-08-20T09:40:00+00:00,Demo Markets Daily,Easing trade tensions with China boost JPMorgan Chase outlook,,https://example.com/sample-news/0053,JPM
+2022-08-20T10:26:00+00:00,Demo Markets Daily,Alphabet delays launch of new AI search assistant after testing problems,,https://example.com/sample-news/0168,GOOGL
+2022-08-20T18:29:00+00:00,Synthetic Wire,"JPMorgan Chase warns of weak revenue in coming quarter, shares slide",,https://example.com/sample-news/0113,JPM
+2022-08-20T21:03:00+00:00,Demo Markets Daily,"Nvidia launches next-generation data-center GPU, preorders sell out",,https://example.com/sample-news/0125,NVDA
+2022-08-21T18:05:00+00:00,Synthetic Wire,S&P cuts Microsoft outlook to negative amid refinancing concerns,,https://example.com/sample-news/0001,MSFT
+2022-08-22T15:30:00+00:00,Sample Business News,Moody's upgrades Microsoft credit rating on strong cash flow,,https://example.com/sample-news/0046,MSFT
+2022-08-22T16:49:00+00:00,Synthetic Wire,EU regulators fine Bank of America over data privacy violations,,https://example.com/sample-news/0144,BAC
+2022-08-23T07:21:00+00:00,Synthetic Wire,Apple unveils new MacBook to strong early demand,,https://example.com/sample-news/0120,AAPL
+2022-08-23T11:33:00+00:00,Synthetic Wire,Alphabet takeover bid collapses after regulators object to merger,,https://example.com/sample-news/0138,GOOGL
+2022-08-23T13:17:00+00:00,Sample Business News,Disney named among most admired companies this year,,https://example.com/sample-news/0209,DIS
+2022-08-23T13:20:00+00:00,Demo Markets Daily,JPMorgan Chase names new chief operating officer to drive growth; Meta Platforms also in focus,,https://example.com/sample-news/0173,
+2022-08-23T17:40:00+00:00,Demo Markets Daily,Meta Platforms exposed as US-China tensions escalate over Taiwan,,https://example.com/sample-news/0079,META
+2022-08-23T21:10:00+00:00,Synthetic Wire,Cooling inflation data lifts Pfizer and other large caps,,https://example.com/sample-news/0027,PFE
+2022-08-23T21:11:00+00:00,Synthetic Wire,"Nvidia CEO abruptly resigns, board begins search for successor",,https://example.com/sample-news/0005,NVDA
+2022-08-24T07:20:00+00:00,Demo Markets Daily,"Alphabet opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0153,GOOGL
+2022-08-24T08:22:00+00:00,Demo Markets Daily,Tesla outlook revised to positive by S&P as debt falls; Netflix also in focus,,https://example.com/sample-news/0186,
+2022-08-24T13:43:00+00:00,Sample Business News,Meta Platforms shares climb as analysts turn more bullish,,https://example.com/sample-news/0064,META
+2022-08-24T14:52:00+00:00,Sample Business News,Amazon shares drift lower in quiet trading,,https://example.com/sample-news/0167,AMZN
+2022-08-24T19:47:00+00:00,Synthetic Wire,Meta Platforms delays launch of new AI assistant after testing problems,,https://example.com/sample-news/0034,META
+2022-08-24T20:49:00+00:00,Synthetic Wire,Tesla recalls products over safety defect,,https://example.com/sample-news/0201,TSLA
+2022-08-25T09:46:00+00:00,Synthetic Wire,Exxon Mobil delays launch of new refinery expansion after testing problems,,https://example.com/sample-news/0145,XOM
+2022-08-25T14:15:00+00:00,Sample Business News,Netflix completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0142,NFLX
+2022-08-25T20:42:00+00:00,Demo Markets Daily,Johnson & Johnson completes acquisition that analysts call highly accretive,,https://example.com/sample-news/0056,JNJ
+2022-08-26T09:16:00+00:00,Sample Business News,"Nvidia warns of weak revenue in coming quarter, shares slide",,https://example.com/sample-news/0020,NVDA
+2022-08-26T12:26:00+00:00,Demo Markets Daily,Pfizer writes down value of failed acquisition,,https://example.com/sample-news/0177,PFE
+2022-08-26T17:29:00+00:00,Demo Markets Daily,"Apple misses earnings expectations, cuts full-year outlook; Alphabet also in focus",,https://example.com/sample-news/0000,
+2022-08-27T07:56:00+00:00,Synthetic Wire,Pfizer delays launch of new RSV vaccine after testing problems,,https://example.com/sample-news/0207,PFE
+2022-08-27T19:15:00+00:00,Sample Business News,Nvidia bonds slump as investors fear credit rating downgrade,,https://example.com/sample-news/0065,NVDA
+2022-08-28T18:11:00+00:00,Demo Markets Daily,Moody's upgrades Alphabet credit rating on strong cash flow,,https://example.com/sample-news/0123,GOOGL
+2022-08-28T18:39:00+00:00,Sample Business News,Easing trade tensions with China boost Meta Platforms outlook; Johnson & Johnson also in focus,,https://example.com/sample-news/0094,
+2022-08-28T19:44:00+00:00,Demo Markets Daily,"Alphabet wins regulatory approval, ending long investigation",,https://example.com/sample-news/0063,GOOGL
+2022-08-29T09:45:00+00:00,Demo Markets Daily,Factory shutdown and supply chain disruption hit Amazon output,,https://example.com/sample-news/0122,AMZN
+2022-08-29T14:27:00+00:00,Synthetic Wire,"Disney launches next-generation animated film, preorders sell out",,https://example.com/sample-news/0119,DIS
+2022-08-29T14:43:00+00:00,Sample Business News,Alphabet benefits as sanctions relief reopens export markets,,https://example.com/sample-news/0018,GOOGL
+2022-08-29T14:45:00+00:00,Demo Markets Daily,"Tesla opens new factory, boosting capacity by 25%",,https://example.com/sample-news/0036,TSLA
+2022-08-29T15:54:00+00:00,Synthetic Wire,Alphabet agrees to acquire AI startup in $2 billion deal,,https://example.com/sample-news/0078,GOOGL
+2022-08-29T17:10:00+00:00,Sample Business News,"Coca-Cola misses earnings expectations, cuts full-year outlook",,https://example.com/sample-news/0163,KO

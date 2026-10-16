@@ -65,6 +65,9 @@ impact:
 
 rebalancer:
   half_life_hours: 24     # decay lambda = ln(2) / half_life
+  prior_weight: 0.2       # neutral pseudo-weight: no news -> sentiment decays to 0
+  lookback_days: 7        # ignore signals older than this (weight < 1%)
+  close_hour_utc: 20      # 4pm New York = rebalance decision time
   sensitivity_k: 0.5      # w = w_base * exp(k * sentiment)
   w_min: 0.02
   w_max: 0.15

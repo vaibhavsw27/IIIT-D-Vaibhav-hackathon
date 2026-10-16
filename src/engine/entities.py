@@ -35,6 +35,12 @@ def _patterns() -> list[tuple[str, re.Pattern]]:
     return out
 
 
+@lru_cache(maxsize=1)
+def _excludes() -> dict[str, re.Pattern]:
+    ex = load_config().get("entity_exclude", {}) or {}
+    return {t: re.compile("|".join(re.escape(x) for x in xs), re.IGNORECASE) for t, xs in ex.items() if xs}
+
+
 def find_tickers(text: str, hint: list[str] | None = None) -> list[str]:
     """Return tickers mentioned in text (plus any dataset-provided hints), order-preserving."""
     cfg = load_config()
@@ -45,9 +51,14 @@ def find_tickers(text: str, hint: list[str] | None = None) -> list[str]:
         t = remap.get(t, t)
         if t in universe and t not in found:
             found.append(t)
+    excludes = _excludes()
     for ticker, pat in _patterns():
-        if ticker not in found and pat.search(text or ""):
-            found.append(ticker)
+        if ticker in found or not pat.search(text or ""):
+            continue
+        ex = excludes.get(ticker)
+        if ex and ex.search(text) and f"${ticker}" not in text:
+            continue  # alias used in a non-company sense
+        found.append(ticker)
     return found
 
 

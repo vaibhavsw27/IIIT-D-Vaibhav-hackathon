@@ -180,6 +180,21 @@ class SignalStore:
                       float(r.agg_sentiment), r.reason) for r in log_rows.itertuples(index=False)],
                 )
 
+    def append_weights(self, run_id: str, weights: pd.DataFrame, log_rows: pd.DataFrame | None = None) -> None:
+        """Add one rebalancing step without touching earlier steps (used by live mode)."""
+        with self.connect() as con:
+            con.executemany(
+                "INSERT OR REPLACE INTO weights VALUES (?,?,?,?,?)",
+                [(run_id, str(r.timestamp), r.ticker, float(r.weight), float(r.agg_sentiment))
+                 for r in weights.itertuples(index=False)],
+            )
+            if log_rows is not None and len(log_rows):
+                con.executemany(
+                    "INSERT OR REPLACE INTO rebalance_log VALUES (?,?,?,?,?,?,?)",
+                    [(run_id, str(r.timestamp), r.ticker, float(r.old_weight), float(r.new_weight),
+                      float(r.agg_sentiment), r.reason) for r in log_rows.itertuples(index=False)],
+                )
+
     def load_weights(self, run_id: str | None = None) -> pd.DataFrame:
         with self.connect() as con:
             if run_id is None:

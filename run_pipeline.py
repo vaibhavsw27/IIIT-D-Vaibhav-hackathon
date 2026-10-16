@@ -52,6 +52,38 @@ def run_live_once(engine: RiskEngine) -> int:
     return len(engine.analyze(docs))
 
 
+def live_rebalance(store: SignalStore) -> None:
+    """One rebalancing step on the live signal stream (run_id='live')."""
+    import pandas as pd
+
+    from src.ingestion.base import now_utc
+    from src.rebalancer.aggregator import aggregate_at, prepare
+    from src.rebalancer.rebalancer import explain, rebalance
+
+    cfg = load_config()
+    tickers = list(cfg["universe"])
+    sig = store.load_signals(run_mode="live")
+    if sig.empty:
+        return
+    prev = store.load_weights("live")
+    old = (prev[prev["timestamp"] == prev["timestamp"].max()].set_index("ticker")["weight"].reindex(tickers)
+           if not prev.empty else pd.Series(1.0 / len(tickers), index=tickers))
+    now = pd.Timestamp(now_utc())
+    agg, drivers = aggregate_at(prepare(sig), now, tickers, top_n=cfg["rebalancer"]["top_reasons"])
+    new = rebalance(agg, old)
+    stamp = now.strftime("%Y-%m-%d %H:%M:%S")
+    w = pd.DataFrame({"timestamp": stamp, "ticker": tickers, "weight": new.values, "agg_sentiment": agg.values})
+    logs = pd.DataFrame([
+        (stamp, t, old[t], new[t], agg[t], explain(t, old[t], new[t], agg[t], drivers.get(t, [])))
+        for t in tickers if abs(new[t] - old[t]) > 1e-4
+    ], columns=["timestamp", "ticker", "old_weight", "new_weight", "agg_sentiment", "reason"])
+    store.append_weights("live", w, logs)
+    top = new.sort_values(ascending=False)
+    log.info("Live rebalance: top %s, bottom %s",
+             ", ".join(f"{t} {v:.1%}" for t, v in top.head(3).items()),
+             ", ".join(f"{t} {v:.1%}" for t, v in top.tail(3).items()))
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--mode", choices=["sample", "historical", "live"], default="sample")
@@ -81,6 +113,7 @@ def main() -> None:
             try:
                 added = run_live_once(engine)
                 n += added
+                live_rebalance(store)
                 store.export()
                 log.info("Live cycle done: %d new signals (total this session %d)", added, n)
             except Exception:  # never let the live demo crash

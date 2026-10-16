@@ -21,6 +21,15 @@ universe:
 
 benchmark: "^GSPC"
 
+# Context phrases that mean an alias is NOT about the company (e.g. the Amazon rainforest).
+# A ticker is dropped when one of these matches, unless its $cashtag is present.
+entity_exclude:
+  AMZN: ["rainforest", "deforestation", "Amazon river", "Amazon basin", "Amazonia", "Amazon jungle"]
+  TSLA: ["Tesla V100", "Tesla T4", "Tesla P100", "Tesla K80", "Nikola Tesla", "Tesla coil"]
+  META: ["meta-analysis", "metadata", "meta analysis"]
+  KO: ["Coke Zero Sugar recipe"]
+  DIS: ["Disney World vacation tips"]
+
 # Tickers used in datasets that should be mapped to our universe
 ticker_remap:
   GOOG: GOOGL
@@ -83,11 +92,11 @@ backtest:
 
 live:
   interval_seconds: 900
-  gdelt_maxrecords: 75
+  gdelt_maxrecords: 250
   gdelt_timespan: "1d"
   request_timeout: 20
   retries: 3
-  sleep_between_calls: 1.5
+  sleep_between_calls: 8     # GDELT asks for <= 1 request per 5 seconds
 
 paths:
   db: "data/signals.db"

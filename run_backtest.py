@@ -33,7 +33,7 @@ def _window(mode: str, signals: pd.DataFrame) -> tuple[str, str]:
 def save_charts(res, mode: str) -> None:
     out = ROOT / load_config()["paths"]["screenshots"]
     out.mkdir(parents=True, exist_ok=True)
-    colors = {"sentiment_index": "#2563eb", "equal_weight": "#9ca3af", "sp500": "#f59e0b"}
+    colors = {"sentiment_index": "#2a78d6", "equal_weight": "#eb6834", "sp500": "#1baf7a"}
     labels = {"sentiment_index": "Sentiment Index", "equal_weight": "Equal Weight", "sp500": "S&P 500"}
 
     fig, ax = plt.subplots(figsize=(10, 4.5), dpi=150)
@@ -48,13 +48,18 @@ def save_charts(res, mode: str) -> None:
     fig.savefig(out / f"backtest_cumulative_{mode}.png")
     plt.close(fig)
 
-    W = res.weights.pivot(index="timestamp", columns="ticker", values="weight")
+    universe = load_config()["universe"]
+    sectors = sorted({m["sector"] for m in universe.values()})
+    palette = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+    wt = res.weights.assign(sector=res.weights["ticker"].map(lambda t: universe[t]["sector"]))
+    W = wt.pivot_table(index="timestamp", columns="sector", values="weight", aggfunc="sum")[sectors]
     fig, ax = plt.subplots(figsize=(10, 4.5), dpi=150)
-    ax.stackplot(W.index, (W * 100).T.values, labels=W.columns, alpha=0.9, colors=plt.cm.tab20.colors[: W.shape[1]])
+    ax.stackplot(W.index, (W * 100).T.values, labels=W.columns, colors=palette[: len(sectors)],
+                 edgecolor="white", linewidth=0.6)
     ax.set_ylabel("Weight (%)")
     ax.set_ylim(0, 100)
-    ax.set_title(f"Index weights over time ({mode})")
-    ax.legend(ncol=8, fontsize=7, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.08))
+    ax.set_title(f"Index weights by sector over time ({mode})")
+    ax.legend(ncol=4, fontsize=7, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.08))
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
     fig.savefig(out / f"weights_stacked_{mode}.png")

@@ -140,7 +140,9 @@ with tabs[0]:
             sec = weights.groupby(["timestamp", "sector"], as_index=False)["weight"].sum()
             fig = px.area(sec, x="timestamp", y="weight", color="sector", color_discrete_map=SECTOR_COLOR,
                           category_orders={"sector": SECTORS})
-            fig.update_traces(line=dict(width=0.5, color="#fcfcfb"), hovertemplate="%{fullData.name}: %{y:.1%}<extra></extra>")
+            for tr in fig.data:  # explicit fill: plotly derives fill from line colour otherwise
+                tr.update(fillcolor=SECTOR_COLOR[tr.name], line=dict(width=1, color="#fcfcfb"),
+                          hovertemplate=f"{tr.name}: %{{y:.1%}}<extra></extra>")
             fig.update_yaxes(tickformat=".0%", range=[0, 1])
             fig.update_layout(hovermode="x unified")
         else:
@@ -307,10 +309,13 @@ with tabs[5]:
         else:
             for sig in out:
                 a, b, c, d = st.columns(4)
-                a.metric("Ticker", sig["ticker"], sig["company"], delta_color="off")
-                b.metric("Sentiment", f"{sig['sentiment_score']:+.2f}", sig["sentiment_label"],
-                         delta_color="normal" if sig["sentiment_score"] >= 0 else "inverse")
-                c.metric("Event", sig["event_type"], f"conf {sig['event_confidence']:.2f}", delta_color="off")
+                a.metric("Ticker", sig["ticker"])
+                a.caption(sig["company"])
+                b.metric("Sentiment (-1..1)", f"{sig['sentiment_score']:+.2f}")
+                b.caption(f"{sig['sentiment_label']} · confidence {sig['sentiment_confidence']:.2f}")
+                c.metric("Event", sig["event_type"])
+                c.caption(f"confidence {sig['event_confidence']:.2f}")
                 d.metric("Impact (1-10)", f"{sig['impact_score']:.1f}")
+                d.caption("high impact" if sig["impact_score"] >= HIGH else "moderate / low")
             with st.expander("Signal JSON"):
                 st.json(out)

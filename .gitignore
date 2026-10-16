@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Data / DB
+*.db-journal
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/prices.csv
+
+# Model caches
+.cache/
+hf_cache/
+models/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+~$*
+
+# Local planning notes (not part of the submission)
+PROJECT_INSTRUCTIONS.md
+1.Submission Guidelines_External.docx*

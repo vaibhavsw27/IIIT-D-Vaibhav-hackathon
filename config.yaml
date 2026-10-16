@@ -1,0 +1,100 @@
+# ---------------------------------------------------------------
+# Risk Engine + Tactical Index Rebalancer configuration
+# ---------------------------------------------------------------
+
+universe:
+  AAPL:  {company: "Apple Inc.",              sector: "Technology",    aliases: ["Apple", "iPhone", "iPad", "Tim Cook", "$AAPL", "AAPL"]}
+  MSFT:  {company: "Microsoft Corp.",         sector: "Technology",    aliases: ["Microsoft", "Satya Nadella", "Azure", "Windows", "$MSFT", "MSFT"]}
+  AMZN:  {company: "Amazon.com Inc.",         sector: "Consumer Disc.", aliases: ["Amazon", "AWS", "Andy Jassy", "Jeff Bezos", "$AMZN", "AMZN"]}
+  GOOGL: {company: "Alphabet Inc.",           sector: "Communication", aliases: ["Google", "Alphabet", "YouTube", "Sundar Pichai", "$GOOGL", "$GOOG", "GOOGL", "GOOG"]}
+  META:  {company: "Meta Platforms Inc.",     sector: "Communication", aliases: ["Meta Platforms", "Meta", "Facebook", "Instagram", "WhatsApp", "Zuckerberg", "$META", "$FB", "META"]}
+  NVDA:  {company: "NVIDIA Corp.",            sector: "Technology",    aliases: ["Nvidia", "NVIDIA", "Jensen Huang", "$NVDA", "NVDA"]}
+  TSLA:  {company: "Tesla Inc.",              sector: "Consumer Disc.", aliases: ["Tesla", "Elon Musk", "Musk", "$TSLA", "TSLA"]}
+  NFLX:  {company: "Netflix Inc.",            sector: "Communication", aliases: ["Netflix", "$NFLX", "NFLX"]}
+  JPM:   {company: "JPMorgan Chase & Co.",    sector: "Financials",    aliases: ["JPMorgan", "JP Morgan", "J.P. Morgan", "Chase", "Jamie Dimon", "$JPM", "JPM"]}
+  BAC:   {company: "Bank of America Corp.",   sector: "Financials",    aliases: ["Bank of America", "BofA", "$BAC", "BAC"]}
+  XOM:   {company: "Exxon Mobil Corp.",       sector: "Energy",        aliases: ["Exxon", "ExxonMobil", "Exxon Mobil", "$XOM", "XOM"]}
+  JNJ:   {company: "Johnson & Johnson",       sector: "Health Care",   aliases: ["Johnson & Johnson", "Johnson and Johnson", "J&J", "$JNJ", "JNJ"]}
+  PFE:   {company: "Pfizer Inc.",             sector: "Health Care",   aliases: ["Pfizer", "$PFE", "PFE"]}
+  KO:    {company: "The Coca-Cola Company",   sector: "Consumer Staples", aliases: ["Coca-Cola", "Coca Cola", "Coke", "$KO"]}
+  DIS:   {company: "The Walt Disney Company", sector: "Communication", aliases: ["Disney", "Walt Disney", "Disney+", "ESPN", "Bob Iger", "$DIS"]}
+
+benchmark: "^GSPC"
+
+# Tickers used in datasets that should be mapped to our universe
+ticker_remap:
+  GOOG: GOOGL
+  FB: META
+
+sentiment:
+  model: "ProsusAI/finbert"
+  batch_size: 16
+  max_length: 512
+
+event_types:
+  - Geopolitical
+  - Macroeconomic
+  - Credit Event
+  - Merger/Acquisition
+  - Earnings
+  - Product Launch
+  - Regulatory/Legal
+  - Management Change
+  - Supply Chain/Operations
+  - Other
+
+impact:
+  base_severity:
+    Credit Event: 8
+    Geopolitical: 7
+    Merger/Acquisition: 7
+    Macroeconomic: 6
+    Regulatory/Legal: 6
+    Earnings: 5
+    Management Change: 5
+    Supply Chain/Operations: 5
+    Product Launch: 4
+    Other: 2
+  source_weight:
+    news: 1.0
+    social: 0.7
+  buzz_coef: 0.1          # multiplier on log1p(mentions in last 24h)
+  min: 1
+  max: 10
+  high_impact_threshold: 7
+
+rebalancer:
+  half_life_hours: 24     # decay lambda = ln(2) / half_life
+  sensitivity_k: 0.5      # w = w_base * exp(k * sentiment)
+  w_min: 0.02
+  w_max: 0.15
+  turnover_cap: 0.03      # max |w_new - w_old| per ticker per step
+  top_reasons: 3          # signals shown in "why did this change"
+
+backtest:
+  # Matches the Kaggle stock-tweets dataset window. Sample data uses its own window.
+  start: "2021-09-30"
+  end: "2022-09-30"
+  risk_free_rate: 0.0
+  trading_days: 252
+
+live:
+  interval_seconds: 900
+  gdelt_maxrecords: 75
+  gdelt_timespan: "1d"
+  request_timeout: 20
+  retries: 3
+  sleep_between_calls: 1.5
+
+paths:
+  db: "data/signals.db"
+  signals_json: "data/signals.json"
+  signals_csv: "data/signals.csv"
+  sample_news: "data/sample/news_sample.csv"
+  sample_tweets: "data/sample/tweets_sample.csv"
+  kaggle_news: "data/raw/all-data.csv"
+  kaggle_tweets: "data/raw/stock_tweets.csv"
+  prices: "data/raw/prices.csv"
+  sample_prices: "data/sample/prices_sample.csv"
+  backtest_results: "data/backtest_results.csv"
+  screenshots: "docs/screenshots"

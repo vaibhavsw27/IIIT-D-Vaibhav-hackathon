@@ -1,0 +1,3 @@
+model,n,accuracy,macro_f1
+FinBERT,4838,0.8892,0.8821
+VADER,4838,0.5436,0.4891

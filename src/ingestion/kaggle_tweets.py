@@ -48,11 +48,9 @@ def load_kaggle_tweets(
 
     if max_per_ticker_day:
         df["day"] = df["date"].dt.date
-        df = (
-            df.sort_values("date")
-            .groupby(["ticker", "day"], group_keys=False)
-            .apply(lambda g: g.sample(min(len(g), max_per_ticker_day), random_state=42))
-        )
+        # random (fixed-seed) subset of at most N tweets per ticker per day
+        df = df.sample(frac=1.0, random_state=42).groupby(["ticker", "day"]).head(max_per_ticker_day)
+        df = df.sort_values("date")
 
     docs = [
         Document(

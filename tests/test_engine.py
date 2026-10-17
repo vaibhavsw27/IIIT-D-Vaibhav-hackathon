@@ -112,7 +112,7 @@ def test_preprocess_dedupes():
 
 
 def test_engine_end_to_end(tmp_path):
-    store = SignalStore(tmp_path / "t.db")
+    store = SignalStore(tmp_path / "t.db", bootstrap=False)
     eng = RiskEngine(store=store, fast=True, run_mode="test")
     docs = [
         _doc("Apple and Microsoft beat quarterly earnings estimates", 0),

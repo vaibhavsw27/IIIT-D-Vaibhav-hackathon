@@ -74,11 +74,13 @@ CREATE TABLE IF NOT EXISTS rebalance_log (
 
 
 class SignalStore:
-    def __init__(self, db_path: Path | None = None) -> None:
+    def __init__(self, db_path: Path | None = None, bootstrap: bool = True) -> None:
         self.db_path = Path(db_path or path("db"))
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         with self.connect() as con:
             con.executescript(SCHEMA)
+        if bootstrap:
+            self.bootstrap()
 
     @contextmanager
     def connect(self) -> Iterator[sqlite3.Connection]:
@@ -214,14 +216,58 @@ class SignalStore:
         with self.connect() as con:
             return [r[0] for r in con.execute("SELECT DISTINCT run_id FROM weights")]
 
-    # ---------- export ----------
+    # ---------- export / restore ----------
+    # signals.json / signals.csv: the demo set (sample + live runs), readable by anyone.
+    # Bulky history is stored as gzipped CSVs so the repo stays small; signals.db is
+    # not committed and is rebuilt from these files on first use (see bootstrap()).
     def export(self, json_path: Path | None = None, csv_path: Path | None = None) -> int:
-        df = self.load_signals()
-        df = df.sort_values("timestamp")
+        df = self.load_signals().sort_values("timestamp")
+        data_dir = Path(path("signals_csv")).parent
         json_path = Path(json_path or path("signals_json"))
         csv_path = Path(csv_path or path("signals_csv"))
-        df.to_csv(csv_path, index=False)
+        demo = df[df["run_mode"] != "historical"]
+        demo.to_csv(csv_path, index=False)
         with open(json_path, "w", encoding="utf-8") as fh:
-            json.dump(json.loads(df.to_json(orient="records")), fh, indent=1, ensure_ascii=False)
-        log.info("Exported %d signals to %s and %s", len(df), json_path.name, csv_path.name)
+            json.dump(json.loads(demo.to_json(orient="records")), fh, ensure_ascii=False, indent=1)
+        hist = df[df["run_mode"] == "historical"]
+        if len(hist):
+            hist.to_csv(data_dir / "signals_historical.csv.gz", index=False, compression="gzip")
+        with self.connect() as con:
+            w = pd.read_sql_query("SELECT * FROM weights ORDER BY run_id, timestamp, ticker", con)
+            r = pd.read_sql_query("SELECT * FROM rebalance_log ORDER BY run_id, timestamp, ticker", con)
+        if len(w):
+            w.to_csv(data_dir / "weights.csv.gz", index=False, compression="gzip")
+            r.to_csv(data_dir / "rebalance_log.csv.gz", index=False, compression="gzip")
+        log.info("Exported %d demo signals (%s) + %d historical signals (signals_historical.csv.gz)",
+                 len(demo), json_path.name, len(hist))
         return len(df)
+
+    def bootstrap(self) -> None:
+        """Rebuild an empty database from the committed exports (fresh clone)."""
+        with self.connect() as con:
+            n_sig = con.execute("SELECT COUNT(*) FROM signals").fetchone()[0]
+            n_w = con.execute("SELECT COUNT(*) FROM weights").fetchone()[0]
+        data_dir = Path(path("signals_csv")).parent
+        if n_sig == 0:
+            frames = [pd.read_csv(f) for f in [Path(path("signals_csv")), data_dir / "signals_historical.csv.gz"] if f.exists()]
+            frames = [f for f in frames if len(f)]
+            if frames:
+                df = pd.concat(frames, ignore_index=True)
+                df = df.astype(object).where(df.notna(), None)
+                self.save_signals(df.to_dict("records"))
+                docs = df.groupby("doc_id").agg(source=("source", "first"), timestamp=("timestamp", "first"),
+                                                n=("signal_id", "size")).reset_index()
+                self.mark_docs([(r.doc_id, r.source, r.timestamp, int(r.n)) for r in docs.itertuples()])
+                log.info("Restored %d signals into %s from exports", len(df), self.db_path.name)
+        if n_w == 0 and (data_dir / "weights.csv.gz").exists():
+            w = pd.read_csv(data_dir / "weights.csv.gz")
+            r = pd.read_csv(data_dir / "rebalance_log.csv.gz") if (data_dir / "rebalance_log.csv.gz").exists() else None
+            with self.connect() as con:
+                con.executemany("INSERT OR REPLACE INTO weights VALUES (?,?,?,?,?)",
+                                w[["run_id", "timestamp", "ticker", "weight", "agg_sentiment"]].itertuples(index=False, name=None))
+                if r is not None and len(r):
+                    r = r.astype(object).where(r.notna(), None)
+                    con.executemany("INSERT OR REPLACE INTO rebalance_log VALUES (?,?,?,?,?,?,?)",
+                                    r[["run_id", "timestamp", "ticker", "old_weight", "new_weight", "agg_sentiment", "reason"]]
+                                    .itertuples(index=False, name=None))
+            log.info("Restored weight history (%d rows)", len(w))

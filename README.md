@@ -203,7 +203,39 @@ Optional: copy `.env.example` to `.env` and set `NEWSAPI_KEY` to add NewsAPI to 
 The sample text is synthetic and unrelated to real prices, so this run only shows that the pipeline works end
 to end; it is not evidence of an edge.
 
-<!-- PHASE8_RESULTS -->
+### Sentiment model evaluation (Kaggle "Sentiment Analysis for Financial News", n = 4,838)
+
+| Model | Accuracy | Macro-F1 | Negative recall |
+|---|---|---|---|
+| **FinBERT** (`ProsusAI/finbert`) | **88.9%** | **0.882** | 97.0% |
+| VADER (lexicon baseline) | 54.4% | 0.489 | 29.8% |
+
+![sentiment eval](docs/screenshots/sentiment_eval.png)
+
+FinBERT is far better than a generic lexicon, especially at catching negative news (the side that matters most for risk).
+**Caveat:** this dataset is derived from the Financial PhraseBank, which FinBERT was fine-tuned on, so these
+numbers are optimistic. Treat them as an upper bound, not a held-out score. Reproduce with `python scripts/evaluate_sentiment.py`.
+
+### Historical backtest (Kaggle stock tweets, 30 Sep 2021 - 29 Sep 2022, daily rebalance)
+
+26,155 tweets (capped at 25 per ticker per day) produced **54,600 signals** (many tweets mention several cashtags).
+
+| Strategy | Cumulative return | Ann. volatility | Sharpe | Max drawdown | Avg daily turnover |
+|---|---|---|---|---|---|
+| Sentiment Index | **-18.79%** | 26.46% | -0.65 | -29.64% | 2.25% |
+| Equal Weight | -19.19% | 26.76% | -0.66 | -29.61% | 0.00% |
+| S&P 500 | -16.76% | 21.83% | -0.73 | -25.25% | 0.00% |
+
+![historical backtest](docs/screenshots/backtest_cumulative_historical.png)
+
+**Reading the result honestly:** over a falling market the sentiment tilt beat the equal-weight version of the same
+15 stocks by about 0.4 percentage points with slightly lower volatility, before transaction costs (~2.25% daily
+turnover would eat most of that). That is a small effect from one year of data, not proof of an edge. The value shown
+here is the **pipeline**: tweets in, explainable signals and bounded, auditable weight changes out. The index trails
+the S&P 500 because the 15-stock universe is tech-heavy and 2022 was a bad year for tech. Parameters were set before
+this run and not tuned on it. Only 9 of the 15 stocks have their own tweet stream; the others appear only when
+mentioned alongside them.
+
 
 ### Dashboard
 

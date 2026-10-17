@@ -11,8 +11,10 @@ Everything the prototype needs to run offline is in this folder. Only public or 
 | `raw/prices.csv` | Daily adjusted closes from Yahoo Finance (`yfinance`) for the 15 stocks + `^GSPC`, Sep 2021 - Oct 2022 | yes (small cache) |
 | `raw/all-data.csv` | Kaggle financial news sentiment (labelled) | no - download |
 | `raw/stock_tweets.csv` | Kaggle stock tweets | no - download |
-| `signals.db` | SQLite: `signals`, `documents`, `weights`, `rebalance_log` tables | yes |
-| `signals.json`, `signals.csv` | Export of the `signals` table (schema in the main README) | yes |
+| `signals.json`, `signals.csv` | Demo signals (sample + live GDELT runs), schema in the main README | yes |
+| `signals_historical.csv.gz` | All 54,600 signals from the Kaggle tweets run (same columns) | yes |
+| `weights.csv.gz`, `rebalance_log.csv.gz` | Index weight path and the reason for every change, per run (`sample`, `historical`, `live`) | yes |
+| `signals.db` | SQLite with tables `signals`, `documents`, `weights`, `rebalance_log`. **Not committed**: rebuilt automatically from the files above on first use (~2 s) | no |
 | `backtest_results*.csv` | Daily returns and growth of each strategy; `*_metrics.csv` = summary table | yes |
 | `sentiment_eval.csv` | FinBERT vs VADER accuracy / macro-F1 on the labelled news set | yes (after Phase 8) |
 

@@ -3,7 +3,7 @@
 **Candidate Name:** Vaibhav
 **College Email ID:** vaibhav24597@iiitd.ac.in
 **College / Campus:** IIIT Delhi
-**Demo Video Link:** _to be added (YouTube, unlisted)_
+**Demo Video Link:** [https://youtu.be/OwzTMbecdrc](https://youtu.be/OwzTMbecdrc)
 **Slide Deck Link (if hosted externally):** [docs/presentation.pdf](docs/presentation.pdf)
 
 > Illustrative research prototype built on public and synthetic data. **Not investment advice.**
